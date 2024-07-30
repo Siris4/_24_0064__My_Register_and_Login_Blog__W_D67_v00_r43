@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Users</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>View Users</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Password Hash</th>
+                <th>Is Admin</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for email, password, is_admin in user_info %}
+                <tr>
+                    <td>{{ email }}</td>
+                    <td>{{ password }}</td>
+                    <td>{{ is_admin }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
